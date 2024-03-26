@@ -1,0 +1,6 @@
+README.md
+setup.py
+shortestpaths.egg-info/PKG-INFO
+shortestpaths.egg-info/SOURCES.txt
+shortestpaths.egg-info/dependency_links.txt
+shortestpaths.egg-info/top_level.txt
