@@ -1,5 +1,6 @@
 import os
 import psutil
+import time
 
 def bellmanford(graph, source, profile=False):
     if profile == True:
@@ -45,7 +46,9 @@ def _dijkstra(graph, source, monitor=None):
 
 def tick(monitor):
     return {
+        "ms": round(time.time() * 1000),
         "cpu": monitor.cpu_times(),
+        "cpu%": monitor.cpu_percent(interval=1.0),
         "mem%": monitor.memory_percent(),
         "mem": monitor.memory_info()
     }
