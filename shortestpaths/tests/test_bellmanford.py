@@ -27,8 +27,6 @@ def test_bellmanford_profiled():
     assert dist == {'A': 0, 'B': 3, 'C': 5}
 
 
-from shortestpaths import bellmanford
-
 def test_bellmanford_simple_graph():
     graph = {
         "vertices": ["A", "B", "C", "D"],

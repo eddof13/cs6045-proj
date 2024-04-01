@@ -27,8 +27,6 @@ def test_floydwarshall_profiled():
     assert dist == {'A': 0, 'B': 3, 'C': 5}
 
 
-from shortestpaths import floydwarshall
-
 def test_floydwarshall_simple_graph():
     graph = {
         "vertices": ["A", "B", "C", "D"],

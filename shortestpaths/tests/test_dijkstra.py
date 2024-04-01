@@ -28,8 +28,6 @@ def test_dijkstra_profiled():
     assert dist == {'A': 0, 'B': 3, 'C': 5}
 
 
-from shortestpaths import dijkstra
-
 def test_dijkstra_simple_graph():
     graph = {
         "vertices": ["A", "B", "C", "D"],
