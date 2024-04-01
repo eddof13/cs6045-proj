@@ -28,12 +28,27 @@ def dijkstra(graph, source, profile=False):
 def _bellmanford(graph, source, monitor=None):
     prof, tic = init_profile(monitor)
 
-    # TODO
-
+    tic()
+    dist = {}
+    prev = {}
+    for v in graph["vertices"]:
+        dist[v] = math.inf
+        prev[v] = None
+    tic()
+    dist[source] = 0
+    for i in range(len(graph["vertices"]) - 1):
+        tic()
+        for key, w in graph["edges"].items():
+            u, v = key.split("->")
+            if dist[u] + w < dist[v]:
+                dist[v] = dist[u] + w
+                prev[v] = u
+    tic()
+    # TODO: implement negative-weight cycle check if necessary
     if monitor:
-        return None, None, prof
+        return dist, prev, prof
     else:
-        return None, None
+        return dist, prev
 
 def _floydwarshall(graph, source, monitor=None):
     prof, tic = init_profile(monitor)
@@ -57,7 +72,7 @@ def _floydwarshall(graph, source, monitor=None):
                     dist[f"{i}->{j}"] = dist[f"{i}->{k}"] + dist[f"{k}->{j}"]
                     prev[f"{i}->{j}"] = prev[f"{k}->{j}"]
     tic()
-    # filtering to only return for source
+    # filtering dist for to only return for source for our purposes
     filtered_dist = {k.split("->")[1]: dist[k] for k in dist.keys() if k.startswith(source)}
     tic()
     if monitor:

@@ -1,5 +1,4 @@
 from shortestpaths import floydwarshall
-import math
 
 def test_floydwarshall():
     graph = {
