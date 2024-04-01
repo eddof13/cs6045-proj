@@ -1,6 +1,8 @@
 # cs6045-proj
 
-Shortest path implementations from source to other nodes (not providing previous hop nodes)- Bellman Ford, Floyd Warshall (from source), Dijkstra
+Shortest path implementations from source to other nodes
+
+Bellman Ford, Floyd Warshall (from source, with previous hops for path reconstruction), Dijkstra
 
 Python 3.8.18, recommended with pyenv
 
