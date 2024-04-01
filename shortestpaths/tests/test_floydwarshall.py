@@ -12,7 +12,7 @@ def test_floydwarshall():
     }
     source = "A"
     dist, prev = floydwarshall(graph, source)
-    assert dist == {'A->B': 3, 'B->C': 2, 'A->C': 5, 'A->A': 0, 'B->B': 0, 'C->C': 0, 'B->A': math.inf, 'C->A': math.inf, 'C->B': math.inf}
+    assert dist == {'A': 0, 'B': 3, 'C': 5}
 
 def test_floydwarshall_profiled():
     graph = {
@@ -25,4 +25,4 @@ def test_floydwarshall_profiled():
     }
     source = "A"
     dist, prev, prof = floydwarshall(graph, source, True)
-    assert dist == {'A->B': 3, 'B->C': 2, 'A->C': 5, 'A->A': 0, 'B->B': 0, 'C->C': 0, 'B->A': math.inf, 'C->A': math.inf, 'C->B': math.inf}
+    assert dist == {'A': 0, 'B': 3, 'C': 5}

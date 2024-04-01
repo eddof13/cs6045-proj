@@ -57,10 +57,13 @@ def _floydwarshall(graph, source, monitor=None):
                     dist[f"{i}->{j}"] = dist[f"{i}->{k}"] + dist[f"{k}->{j}"]
                     prev[f"{i}->{j}"] = prev[f"{k}->{j}"]
     tic()
+    # filtering to only return for source
+    filtered_dist = {k.split("->")[1]: dist[k] for k in dist.keys() if k.startswith(source)}
+    tic()
     if monitor:
-        return dist, prev, prof
+        return filtered_dist, prev, prof
     else:
-        return dist, prev
+        return filtered_dist, prev
 
 def _dijkstra(graph, source, monitor=None):
     prof, tic = init_profile(monitor)
