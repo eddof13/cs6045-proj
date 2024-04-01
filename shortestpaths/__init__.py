@@ -44,7 +44,12 @@ def _bellmanford(graph, source, monitor=None):
                 dist[v] = dist[u] + w
                 prev[v] = u
     tic()
-    # TODO: implement negative-weight cycle check if necessary
+    # Negative-weight cycle check
+    for key, w in graph["edges"].items():
+        u, v = key.split("->")
+        if dist[u] + w < dist[v]:
+            raise Exception("Negative-weight cycle detected")
+    tic()
     if monitor:
         return dist, prev, prof
     else:
@@ -123,7 +128,7 @@ def min_dist(Q, dist):
 def neighbors(Q, u, graph):
     neighbors = []
     for v in Q:
-        if graph["edges"][f"{u}->{v}"]:
+        if f"{u}->{v}" in graph["edges"]:
             neighbors.append(v)
     return neighbors
 
