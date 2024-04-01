@@ -2,62 +2,73 @@ import math
 import os
 import psutil
 import time
+from collections import defaultdict
 
 def bellmanford(graph, source, profile=False):
     if profile == True:
-        result, prof = _bellmanford(graph, source, monitor=proc())
+        dist, prev, prof = _bellmanford(graph, source, monitor=proc())
         write_graphs(prof)
-        return result, prof
+        return dist, prev, prof
     return _bellmanford(graph, source)
 
 def floydwarshall(graph, source, profile=False):
     if profile == True:
-        result, prof = _floydwarshall(graph, source, monitor=proc())
+        dist, prev, prof = _floydwarshall(graph, source, monitor=proc())
         write_graphs(prof)
-        return result, prof
+        return dist, prev, prof
     return _floydwarshall(graph, source)
 
 def dijkstra(graph, source, profile=False):
     if profile == True:
-        result, prof = _dijkstra(graph, source, monitor=proc())
+        dist, prev, prof = _dijkstra(graph, source, monitor=proc())
         write_graphs(prof)
-        return result, prof
+        return dist, prev, prof
     return _dijkstra(graph, source)
 
 def _bellmanford(graph, source, monitor=None):
-    prof = []
-    if monitor:
-        tic = lambda: prof.append(tick(monitor))
-    else:
-        tic = lambda: None
+    prof, tic = init_profile(monitor)
+
+    # TODO
 
     if monitor:
-        return None, prof
+        return None, None, prof
     else:
-        return None
+        return None, None
 
-# floyd warshall calculates all pairs, but we only care about them from source for consistency
-# so we need to use path reconstruction at the end for each vertice from the source for calculation
 def _floydwarshall(graph, source, monitor=None):
-    prof = []
-    if monitor:
-        tic = lambda: prof.append(tick(monitor))
-    else:
-        tic = lambda: None
+    prof, tic = init_profile(monitor)
 
+    tic()
+    dist = defaultdict(lambda: math.inf)
+    prev = {}
+    for key, value in graph["edges"].items():
+        dist[key] = value
+        prev[key] = key.split("->")[0]
+    tic()    
+    for v in graph["vertices"]:
+        dist[f"{v}->{v}"] = 0
+        prev[f"{v}->{v}"] = v
+    tic()
+    for k in graph["vertices"]:
+        tic()
+        for i in graph["vertices"]:
+            for j in graph["vertices"]:
+                if dist[f"{i}->{j}"] > dist[f"{i}->{k}"] + dist[f"{k}->{j}"]:
+                    dist[f"{i}->{j}"] = dist[f"{i}->{k}"] + dist[f"{k}->{j}"]
+                    prev[f"{i}->{j}"] = prev[f"{k}->{j}"]
+    tic()
+    # filtering to only return for source
+    filtered_dist = {k.split("->")[1]: dist[k] for k in dist.keys() if k.startswith(source)}
+    tic()
     if monitor:
-        return None, prof
+        return filtered_dist, prev, prof
     else:
-        return None
+        return filtered_dist, prev
 
 def _dijkstra(graph, source, monitor=None):
-    prof = []
-    if monitor:
-        tic = lambda: prof.append(tick(monitor))
-    else:
-        tic = lambda: None
+    prof, tic = init_profile(monitor)
 
-    tic
+    tic()
     dist = {}
     prev = {}
     Q = []
@@ -65,24 +76,23 @@ def _dijkstra(graph, source, monitor=None):
         dist[v] = math.inf
         prev[v] = None
         Q.append(v)
-        tic
     dist[source] = 0
-
+    
     while len(Q) > 0:
         u = min_dist(Q, dist)
         Q.remove(u)
-        tic
+        tic()
         for v in neighbors(Q, u, graph):
             alt = dist[u] + edge(u, v, graph)
             if alt < dist[v]:
                 dist[v] = alt
                 prev[v] = u
-            tic
-    tic
+            tic()
+    tic()
     if monitor:
-        return dist, prof
+        return dist, prev, prof
     else:
-        return dist
+        return dist, prev
 
 def edge(u, v, graph):
     length = graph["edges"][f"{u}->{v}"]
@@ -101,6 +111,14 @@ def neighbors(Q, u, graph):
         if graph["edges"][f"{u}->{v}"]:
             neighbors.append(v)
     return neighbors
+
+def init_profile(monitor):
+    prof = []
+    if monitor:
+        tic = lambda: prof.append(tick(monitor))
+    else:
+        tic = lambda: None
+    return prof, tic
 
 def tick(monitor):
     return {

@@ -10,7 +10,8 @@ def test_dijkstra():
         "vertices": ["A", "B", "C"]
     }
     source = "A"
-    assert shortestpaths.dijkstra(graph, source) == {'A': 0, 'B': 3, 'C': 5}
+    dist, prev = shortestpaths.dijkstra(graph, source)
+    assert dist == {'A': 0, 'B': 3, 'C': 5}
 
 def test_dijkstra_profiled():
     graph = {
@@ -22,4 +23,5 @@ def test_dijkstra_profiled():
         "vertices": ["A", "B", "C"]
     }
     source = "A"
-    assert shortestpaths.dijkstra(graph, source, True) == ({'A': 0, 'B': 3, 'C': 5}, [])
+    dist, prev, prof = shortestpaths.dijkstra(graph, source, True)
+    assert dist == {'A': 0, 'B': 3, 'C': 5}
