@@ -24,3 +24,7 @@ Graph format:
   },
   "vertices": ["A", "B", "C"]
 }
+
+Run profiler:
+
+python profile.py
