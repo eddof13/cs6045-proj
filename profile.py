@@ -6,9 +6,7 @@ import multiprocessing
 from threading import Event
 from ischedule import schedule, run_loop
 
-stop_event = Event()
-
-def tick(q, f, pid):
+def tick(q, f, pid, stop_event):
     if not f.empty():
         stop_event.set()
     monitor = psutil.Process()
@@ -21,8 +19,9 @@ def tick(q, f, pid):
     })
 
 def init_ticker(q, f, pid):
+    stop_event = Event()
     def ticker():
-        tick(q, f, pid)
+        tick(q, f, pid, stop_event)
     schedule(ticker, interval=0.1)
     run_loop(stop_event=stop_event)
     
@@ -52,8 +51,17 @@ if __name__ == "__main__":
         "vertices": ["A", "B", "C"]
     }
     source = "A"
+
     print("Starting dijkstra 1")
     process(shortestpaths.dijkstra, graph, source)
     print("Finishing dijkstra 1")
+
+    print("Starting bellmanford 1")
+    process(shortestpaths.bellmanford, graph, source)
+    print("Finishing bellmanford 1")
+
+    print("Starting floydwarshall 1")
+    process(shortestpaths.floydwarshall, graph, source)
+    print("Finishing floydwarshall 1")
 
 
