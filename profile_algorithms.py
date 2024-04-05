@@ -3,6 +3,8 @@ import psutil
 import time
 import shortestpaths
 import multiprocessing
+from cProfile import Profile
+from pstats import SortKey, Stats
 from threading import Event
 from ischedule import schedule, run_loop
 
@@ -29,10 +31,12 @@ def load_func(q, f, func, graph, source):
     pid = os.getpid()
     p = multiprocessing.Process(target=init_ticker, args=(q, f, pid))
     p.start()
-    print(func(graph, source))
+    with Profile() as profile:
+        print(func(graph, source))
+        Stats(profile).strip_dirs().sort_stats(SortKey.CALLS).print_stats()
     f.put("die")
 
-def process(func, graph, source):
+def profile(func, graph, source):
     q = multiprocessing.Queue()
     f = multiprocessing.Queue()
     p = multiprocessing.Process(target=load_func, args=(q, f, func, graph, source))
@@ -53,15 +57,15 @@ if __name__ == "__main__":
     source = "A"
 
     print("Starting dijkstra 1")
-    process(shortestpaths.dijkstra, graph, source)
+    profile(shortestpaths.dijkstra, graph, source)
     print("Finishing dijkstra 1")
 
     print("Starting bellmanford 1")
-    process(shortestpaths.bellmanford, graph, source)
+    profile(shortestpaths.bellmanford, graph, source)
     print("Finishing bellmanford 1")
 
     print("Starting floydwarshall 1")
-    process(shortestpaths.floydwarshall, graph, source)
+    profile(shortestpaths.floydwarshall, graph, source)
     print("Finishing floydwarshall 1")
 
 

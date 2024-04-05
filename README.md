@@ -27,4 +27,4 @@ Graph format:
 
 Run profiler:
 
-python profile.py
+python profile_algorithms.py
