@@ -78,7 +78,7 @@
       <workItem from="1712349141548" duration="610000" />
       <workItem from="1712536813767" duration="604000" />
       <workItem from="1712688844099" duration="467000" />
-      <workItem from="1712699979062" duration="2304000" />
+      <workItem from="1712699979062" duration="2830000" />
     </task>
     <task id="LOCAL-00001" summary="Add additional tests and implement negative-weight cycle check&#10;&#10;- Added 2 test cases to each algorithm: &#10;   - test_bellmanford_simple_graph()&#10;   - test_bellmanford_negative_cycle()&#10;   - test_floydwarshall_simple_graph()&#10;   - test_floydwarshall_negative_weights()&#10;   - test_dijkstra_simple_graph()&#10;   - test_dijkstra_disconnected_graph()&#10;&#10;&#10;- Expanded the test suite for Floyd-Warshall, Dijkstra, and Bellmanfordalgorithms checking different scenarios, such as negative weights and disconnected graphs. Enhanced the Bellmanford's algorithm to detect negative-weight cycles. &#10;&#10;- Minor fix in the 'neighbors' function was also added to ensure a key exists in the graph's edges.">
       <option name="closed" value="true" />
