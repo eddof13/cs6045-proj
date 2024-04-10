@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c11aadc6-97d5-4ccc-b87c-a844ac5fbd87" name="Changes" comment="Add additional tests and implement negative-weight cycle check&#10;&#10;- Added 2 test cases to each algorithm: &#10;   - test_bellmanford_simple_graph()&#10;   - test_bellmanford_negative_cycle()&#10;   - test_floydwarshall_simple_graph()&#10;   - test_floydwarshall_negative_weights()&#10;   - test_dijkstra_simple_graph()&#10;   - test_dijkstra_disconnected_graph()&#10;&#10;&#10;- Expanded the test suite for Floyd-Warshall, Dijkstra, and Bellmanfordalgorithms checking different scenarios, such as negative weights and disconnected graphs. Enhanced the Bellmanford's algorithm to detect negative-weight cycles. &#10;&#10;- Minor fix in the 'neighbors' function was also added to ensure a key exists in the graph's edges." />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="C-Branch" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Cesar6060&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="16d0183e-9edf-43ed-ae01-f05aafdb090d" />
+        <option name="url" value="https://github.com/eddof13/cs6045-proj.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2eVVbmeyFENxCN1AiAxU3bxLNrh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests in test_bellmanford.py.executor": "Run",
+    "Python tests.Python tests in test_dijkstra.py.executor": "Run",
+    "Python tests.Python tests in test_floydwarshall.py.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c11aadc6-97d5-4ccc-b87c-a844ac5fbd87" name="Changes" comment="" />
+      <created>1711989805579</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711989805579</updated>
+      <workItem from="1711989806598" duration="9691000" />
+      <workItem from="1712007859946" duration="3702000" />
+      <workItem from="1712349141548" duration="610000" />
+      <workItem from="1712536813767" duration="604000" />
+      <workItem from="1712688844099" duration="467000" />
+      <workItem from="1712699979062" duration="2304000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add additional tests and implement negative-weight cycle check&#10;&#10;- Added 2 test cases to each algorithm: &#10;   - test_bellmanford_simple_graph()&#10;   - test_bellmanford_negative_cycle()&#10;   - test_floydwarshall_simple_graph()&#10;   - test_floydwarshall_negative_weights()&#10;   - test_dijkstra_simple_graph()&#10;   - test_dijkstra_disconnected_graph()&#10;&#10;&#10;- Expanded the test suite for Floyd-Warshall, Dijkstra, and Bellmanfordalgorithms checking different scenarios, such as negative weights and disconnected graphs. Enhanced the Bellmanford's algorithm to detect negative-weight cycles. &#10;&#10;- Minor fix in the 'neighbors' function was also added to ensure a key exists in the graph's edges.">
+      <option name="closed" value="true" />
+      <created>1711999636319</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711999636319</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add additional tests and implement negative-weight cycle check&#10;&#10;- Added 2 test cases to each algorithm: &#10;   - test_bellmanford_simple_graph()&#10;   - test_bellmanford_negative_cycle()&#10;   - test_floydwarshall_simple_graph()&#10;   - test_floydwarshall_negative_weights()&#10;   - test_dijkstra_simple_graph()&#10;   - test_dijkstra_disconnected_graph()&#10;&#10;&#10;- Expanded the test suite for Floyd-Warshall, Dijkstra, and Bellmanfordalgorithms checking different scenarios, such as negative weights and disconnected graphs. Enhanced the Bellmanford's algorithm to detect negative-weight cycles. &#10;&#10;- Minor fix in the 'neighbors' function was also added to ensure a key exists in the graph's edges.">
+      <option name="closed" value="true" />
+      <created>1712008190049</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712008190049</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add additional tests and implement negative-weight cycle check&#10;&#10;- Added 2 test cases to each algorithm: &#10;   - test_bellmanford_simple_graph()&#10;   - test_bellmanford_negative_cycle()&#10;   - test_floydwarshall_simple_graph()&#10;   - test_floydwarshall_negative_weights()&#10;   - test_dijkstra_simple_graph()&#10;   - test_dijkstra_disconnected_graph()&#10;&#10;&#10;- Expanded the test suite for Floyd-Warshall, Dijkstra, and Bellmanfordalgorithms checking different scenarios, such as negative weights and disconnected graphs. Enhanced the Bellmanford's algorithm to detect negative-weight cycles. &#10;&#10;- Minor fix in the 'neighbors' function was also added to ensure a key exists in the graph's edges.">
+      <option name="closed" value="true" />
+      <created>1712008901922</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712008901922</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add additional tests and implement negative-weight cycle check&#10;&#10;- Added 2 test cases to each algorithm: &#10;   - test_bellmanford_simple_graph()&#10;   - test_bellmanford_negative_cycle()&#10;   - test_floydwarshall_simple_graph()&#10;   - test_floydwarshall_negative_weights()&#10;   - test_dijkstra_simple_graph()&#10;   - test_dijkstra_disconnected_graph()&#10;&#10;&#10;- Expanded the test suite for Floyd-Warshall, Dijkstra, and Bellmanfordalgorithms checking different scenarios, such as negative weights and disconnected graphs. Enhanced the Bellmanford's algorithm to detect negative-weight cycles. &#10;&#10;- Minor fix in the 'neighbors' function was also added to ensure a key exists in the graph's edges." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add additional tests and implement negative-weight cycle check&#10;&#10;- Added 2 test cases to each algorithm: &#10;   - test_bellmanford_simple_graph()&#10;   - test_bellmanford_negative_cycle()&#10;   - test_floydwarshall_simple_graph()&#10;   - test_floydwarshall_negative_weights()&#10;   - test_dijkstra_simple_graph()&#10;   - test_dijkstra_disconnected_graph()&#10;&#10;&#10;- Expanded the test suite for Floyd-Warshall, Dijkstra, and Bellmanfordalgorithms checking different scenarios, such as negative weights and disconnected graphs. Enhanced the Bellmanford's algorithm to detect negative-weight cycles. &#10;&#10;- Minor fix in the 'neighbors' function was also added to ensure a key exists in the graph's edges." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/cs6045_proj$.coverage" NAME=" Coverage Results" MODIFIED="1712702714819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shortestpaths/tests" />
+  </component>
+</project>
