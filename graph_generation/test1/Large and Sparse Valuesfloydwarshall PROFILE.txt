@@ -1,0 +1,1 @@
+{'ms': 1714436472008, 'cpu': pcputimes(user=0.02834954, system=0.012546958, children_user=0.0, children_system=0.0), 'cpu%': 0.0, 'mem%': 0.09002685546875, 'mem': pmem(rss=15466496, vms=421007982592, pfaults=1253, pageins=2)}
