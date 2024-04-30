@@ -1,1 +1,4 @@
-{'ms': 1714436452272, 'cpu': pcputimes(user=0.02957504, system=0.013979791, children_user=0.0, children_system=0.0), 'cpu%': 0.0, 'mem%': 0.09202957153320312, 'mem': pmem(rss=15810560, vms=421152686080, pfaults=1273, pageins=20)}
+{'ms': 1714517592512, 'cpu': pcputimes(user=0.027161876, system=0.010695916, children_user=0.0, children_system=0.0), 'cpu%': 0.0, 'mem%': 0.09183883666992188, 'mem': pmem(rss=15777792, vms=421261688832, pfaults=1256, pageins=1)}
+{'ms': 1714517593512, 'cpu': pcputimes(user=0.027454666, system=0.010952458, children_user=0.0, children_system=0.0), 'cpu%': 0.0, 'mem%': 0.09202957153320312, 'mem': pmem(rss=15810560, vms=421278515200, pfaults=1258, pageins=1)}
+{'ms': 1714517594517, 'cpu': pcputimes(user=0.027627916, system=0.011098083, children_user=0.0, children_system=0.0), 'cpu%': 0.0, 'mem%': 0.09202957153320312, 'mem': pmem(rss=15810560, vms=421278515200, pfaults=1258, pageins=1)}
+{'ms': 1714517595520, 'cpu': pcputimes(user=0.027875416, system=0.011331083, children_user=0.0, children_system=0.0), 'cpu%': 0.0, 'mem%': 0.09250640869140625, 'mem': pmem(rss=15892480, vms=421287952384, pfaults=1263, pageins=1)}

@@ -50,8 +50,8 @@ def profile(func, graph, source, name):
     p.join()
     while not q.empty():
         result = str(q.get())
-    with open(name.split(".")[0] + " PROFILE.txt", "a") as output:
-        output.write(result)
+        with open(name.split(".")[0] + " PROFILE.txt", "a") as output:
+            output.write(result + '\n')
 
 def test_files():
     root_folder = "graph_generation"
