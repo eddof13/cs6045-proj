@@ -33,7 +33,10 @@ def load_func(q, f, func, graph, source, name):
     p = multiprocessing.Process(target=init_ticker, args=(q, f, pid))
     p.start()
     with Profile() as profile:
-        results = str(func(graph, source))
+        try:
+            results = str(func(graph, source))
+        except Exception as err:
+            results = str(err)
         Stats(profile).strip_dirs().sort_stats(SortKey.CALLS).dump_stats(name.split(".")[0] + " HEATMAP.txt")
     with open(name.split(".")[0] + " RESULTS.txt", "w") as output:
         output.write(results)
