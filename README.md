@@ -28,3 +28,6 @@ Graph format:
 Run profiler:
 
 python profile_algorithms.py
+
+on heatmap file:
+python -m pstats filename
