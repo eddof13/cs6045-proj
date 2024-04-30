@@ -71,16 +71,16 @@ if __name__ == "__main__":
             graph = eval("{ " + data + " }") # this is quite dangerous, but we are only using it for profiling
             source = random.choice(graph["vertices"]) # picking a source at random
 
-            print(f"Starting dijkstra #{test_file} with source #{source}")
-            profile(shortestpaths.dijkstra, graph, source, test_file + " dijkstra")
-            print(f"Finishing dijkstra #{test_file} with source #{source}")
+            print(f"Starting dijkstra {test_file} with source {source}")
+            profile(shortestpaths.dijkstra, graph, source, test_file.replace(".", "dijkstra."))
+            print(f"Finishing dijkstra {test_file} with source {source}")
 
-            print(f"Starting bellmanford #{test_file} with source #{source}")
-            profile(shortestpaths.bellmanford, graph, source, test_file + " bellmanford")
-            print(f"Finishing bellmanford #{test_file} with source #{source}")
+            print(f"Starting bellmanford {test_file} with source {source}")
+            profile(shortestpaths.bellmanford, graph, source, test_file.replace(".", "bellmanford."))
+            print(f"Finishing bellmanford {test_file} with source {source}")
 
-            print(f"Starting floydwarshall #{test_file} with source #{source}")
-            profile(shortestpaths.floydwarshall, graph, source, test_file + " floydwarshall")
-            print(f"Finishing floydwarshall #{test_file} with source #{source}")
+            print(f"Starting floydwarshall {test_file} with source {source}")
+            profile(shortestpaths.floydwarshall, graph, source, test_file.replace(".", "floydwarshall."))
+            print(f"Finishing floydwarshall {test_file} with source {source}")
 
 
